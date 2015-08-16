@@ -7,6 +7,7 @@
         <meta name="description" content="A just for fun DigitalOcean API client">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
     </head>
     <body>
 
@@ -21,7 +22,11 @@
                     <ul class="list-group">
                         <li class="list-group-item active">Droplets</li>
                         <li class="list-group-item" ng-repeat="droplet in droplets">
-                            <span ng-bind="droplet.name"></span> <span ng-bind="droplet.status">
+                            <p><strong>Name: </strong><span ng-bind="droplet.name"></span></p>
+                            <p><strong>Status: </strong><span ng-bind="droplet.status"></span></p>
+                            <p><strong>Memory: </strong><span ng-bind="droplet.memory"></span> <span>MB</span></p>
+                            <p><strong>CPUs: </strong><span ng-bind="droplet.vcpus"></span></p>
+                            <p><strong>HDD: </strong><span ng-bind="droplet.disk"></span> <span>GB</span></p>
                         </li><!-- list-group -->
                     </ul><!-- list-group -->
                 </div><!-- col-md-6 -->
