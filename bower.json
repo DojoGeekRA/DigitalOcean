@@ -1,0 +1,19 @@
+{
+  "name": "DigitalOceanAPIClient",
+  "version": "0.0.1",
+  "authors": [
+    "Roberto Aguilar <raguilar@dojogeek.io>"
+  ],
+  "description": "A just for fun DigitalOcean API client",
+  "keywords": [
+    "DigitalOcean"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
