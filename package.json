@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/DojoGeekRA/DigitalOcean/issues"
   },
-  "homepage": "https://github.com/DojoGeekRA/DigitalOcean#readme"
+  "homepage": "https://github.com/DojoGeekRA/DigitalOcean#readme",
+  "dependencies": {
+    "karma": "^0.13.9"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.3.4",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6"
+  }
 }
