@@ -15,5 +15,14 @@
                 expect(Megabytes(0)).toBe('0 MB');
             });
         });
+        describe('Gygabytes', function () {
+            var Gygabytes;
+            beforeEach(function () {
+                Gygabytes = $filter('Gygabytes');
+            });
+            it('should append the suffix GB to an argument', function () {
+                expect(Gygabytes(0)).toBe('0 GB');
+            });
+        });
     });
 })();

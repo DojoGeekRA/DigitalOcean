@@ -5,5 +5,10 @@
             return function (memory) {
                 return memory + ' ' + 'MB';
             };
-        });
+        })
+        .filter('Gygabytes', function () {
+            return function (memory) {
+                return memory + ' ' + 'GB';
+            };
+        });;
 })();
