@@ -17,18 +17,24 @@
                     <h1 ng-bind="message"></h1>
                 </div><!-- col-md-12 -->
             </div><!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Droplets</h2>
+                </div><!-- col-md -->
+            </div><!-- row -->
             <div class="row" ng-controller="DropletListController">
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item active">Droplets</li>
-                        <li class="list-group-item" ng-repeat="droplet in droplets">
-                            <p><strong>Name: </strong><span ng-bind="droplet.name"></span></p>
-                            <p><strong>Status: </strong><span ng-bind="droplet.status"></span></p>
-                            <p><strong>Memory: </strong><span ng-bind="droplet.memory"></span> <span>MB</span></p>
-                            <p><strong>CPUs: </strong><span ng-bind="droplet.vcpus"></span></p>
-                            <p><strong>HDD: </strong><span ng-bind="droplet.disk"></span> <span>GB</span></p>
-                        </li><!-- list-group -->
-                    </ul><!-- list-group -->
+                <div class="col-md-6" ng-repeat="droplet in droplets">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><span ng-bind="droplet.name"></span></div><!-- panel-heading -->
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <p><strong>Status: </strong><span ng-bind="droplet.status"></span></p>
+                                <p><strong>Memory: </strong><span ng-bind="droplet.memory"></span><span> MB</span></p>
+                                <p><strong>CPUs: </strong><span ng-bind="droplet.vcpus"></span></p>
+                                <p><strong>Disk: </strong><span ng-bind="droplet.disk"></span><span> GB</span></p>
+                            </ul><!-- list-group -->
+                        </div><!-- panel-body -->
+                    </div><!-- panel -->
                 </div><!-- col-md-6 -->
             </div><!-- row -->
         </div><!-- container -->
