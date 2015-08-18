@@ -28,10 +28,10 @@
                         <div class="panel-heading"><span ng-bind="droplet.name"></span></div><!-- panel-heading -->
                         <div class="panel-body">
                             <ul class="list-group">
-                                <p><strong>Status: </strong><span ng-bind="droplet.status"></span></p>
-                                <p><strong>Memory: </strong><span ng-bind="droplet.memory | Megabytes"></span></p>
-                                <p><strong>CPUs: </strong><span ng-bind="droplet.vcpus"></span></p>
-                                <p><strong>Disk: </strong><span ng-bind="droplet.disk | Gygabytes"></span></p>
+                                <status></status>
+                                <memory></memory>
+                                <cpus></cpus>
+                                <disk></disk>
                             </ul><!-- list-group -->
                         </div><!-- panel-body -->
                     </div><!-- panel -->
@@ -44,5 +44,6 @@
         <script src="js/controllers.js"></script>
         <script src="js/services.js"></script>
         <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
     </body>
 </html>
