@@ -1,5 +1,5 @@
 (function () {
-    angular.module('directives', [])
+    angular.module('directives', ['filters'])
         .directive('status', function () {
             return {
                 restrict: 'E',

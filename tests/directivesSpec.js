@@ -2,27 +2,41 @@
     'use strict';
     describe('directives module', function () {
         var $compile,
-            $rootScope;
+            $rootScope,
+            DropletMock;
         beforeEach(module('directives'));
         beforeEach(inject(function ($injector) {
             $compile = $injector.get('$compile');
             $rootScope = $injector.get('$rootScope');
+            DropletMock = {
+                'status': 'active',
+                'memory': '512'
+            };
         }));
         describe('status', function () {
             var $scope,
                 element;
             beforeEach(function () {
                 $scope = $rootScope.$new();
-                $scope.droplets = [{
-                    'droplet': {
-                        'status': 'active'
-                    }
-                }];
-                element = $compile('<status></status>')($rootScope);
+                $scope.droplet = DropletMock;
+                element = $compile('<status></status>')($scope);
                 $rootScope.$digest();
             });
-            it('should contains the "active" string in a child noce', function () {
-                expect(element.html()).toBe('<p><strong>Status: </strong><span ng-bind="droplet.status" class="ng-binding"></span></p>');
+            it('should contains the "Status: active" string in a child node', function () {
+                expect(element[0].innerText).toBe('Status: active');
+            });
+        });
+        describe('memory', function () {
+            var $scope,
+                element;
+            beforeEach(function () {
+                $scope = $rootScope.$new();
+                $scope.droplet = DropletMock;
+                element = $compile('<memory></memory>')($scope);
+                $rootScope.$digest();
+            });
+            it('should contains the "Memory: 512MB" string in a child node', function () {
+                expect(element[0].innerText).toBe('Memory: 512 MB');
             });
         });
     });
