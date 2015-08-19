@@ -10,8 +10,9 @@
             $rootScope = $injector.get('$rootScope');
             DropletMock = {
                 'status': 'active',
-                'memory': '512',
-                'vcpus': 1
+                'memory': 512,
+                'vcpus': 1,
+                'disk': 20
             };
         }));
         describe('status', function () {
@@ -36,7 +37,7 @@
                 element = $compile('<memory></memory>')($scope);
                 $rootScope.$digest();
             });
-            it('should contains the "Memory: 512MB" string in a child node', function () {
+            it('should contains the "Memory: 512 MB" string in a child node', function () {
                 expect(element[0].innerText).toBe('Memory: 512 MB');
             });
         });
@@ -50,7 +51,20 @@
                 $rootScope.$digest();
             });
             it('should contains the "CPUs: 1" string in a child node', function () {
-                expect(element[0].innerText).toBe("CPUs: 1");
+                expect(element[0].innerText).toBe('CPUs: 1');
+            });
+        });
+        describe('disk', function () {
+            var $scope,
+                element;
+            beforeEach(function () {
+                $scope = $rootScope.$new();
+                $scope.droplet = DropletMock;
+                element = $compile('<disk></disk>')($scope);
+                $rootScope.$digest();
+            });
+            it('should contains the "Disk: 20 GB" string in a child node', function () {
+                expect(element[0].innerText).toBe('Disk: 20 GB');
             });
         });
     });
